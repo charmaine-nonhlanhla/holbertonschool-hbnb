@@ -1,0 +1,38 @@
+@startuml
+class User {
+  - email: String
+  - first_name: String
+  - last_name: String
+}
+
+class Place {
+  - name: String
+  - location: String
+  - price: Float
+}
+
+class Review {
+  - rating: Int
+  - comment: String
+}
+
+class Amenity {
+  - name: String
+  - description: String
+}
+
+class Country {
+  - name: String
+}
+
+class City {
+  - name: String
+}
+
+User "1" -- "0..*" Place
+Place "1" -- "0..*" Review
+Place "0..*" -- "0..*" Amenity
+City "1" -- "0..*" Place
+Country "1" -- "0..*" City
+@enduml
+
